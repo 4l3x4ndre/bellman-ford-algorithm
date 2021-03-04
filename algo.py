@@ -12,7 +12,7 @@ g.add_edge(1, 5, 100)
 g.add_edge(5, 4, 1)
 
 
-def belmannford(g, s):
+def bellmannford(g, s):
     distances = [inf] * len(g.tops())
     distances[0] = 0
 
@@ -27,5 +27,5 @@ def belmannford(g, s):
     return distances
 
 
-d = belmannford(g, 0)
+d = bellmannford(g, 0)
 print(d)
