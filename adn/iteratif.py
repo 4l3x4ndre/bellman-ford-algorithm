@@ -5,28 +5,23 @@ def alignement(s1, s2):
     :param s2:
     :return:
     """
-    # Keeping track of the longest string
-    string_length = max(len(s1), len(s2))+1
 
     # Creating the array...
     # 1. Fill in it with zero
-    t = [[0] * string_length for _ in range(string_length)]
+    t = [[0] * (len(s1)+1) for _ in range(len(s1)+1)]
 
     # 2. First line :
     # Take 0 charactere from s1 and x character from s2 for x in [0, len(s2)]
     # Thus, points are getting lower bc we are comparing x charactere with zero from s1
-    t[0] = [x for x in range(0, -string_length, -1)]
+    t[0] = [x for x in range(0, -(len(s1)+1), -1)]
 
     # Same principle for the first column
-    for y in range(string_length):
+    for y in range((len(s1)+1)):
         t[y][0] = -y
 
     # Begin of the algorithm
     for y in range(1, len(t)):
-
         for x in range(1, len(t)):
-
-
 
             # Left score
             # Removing a letter => -1
@@ -53,6 +48,6 @@ def alignement(s1, s2):
     return t
 
 
-t = alignement('abcd', 'bcd')
+t = alignement('abcd', 'eacd')
 for l in t:
     print(l)
