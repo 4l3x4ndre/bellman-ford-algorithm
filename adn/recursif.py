@@ -1,3 +1,5 @@
+""" W.I.P. not working yet """
+
 def alignement(s1, s2):
 
     # If one is empty, then score is negative according to the length of the other one
